@@ -10,6 +10,20 @@ import android.view.MotionEvent;
 
 /**
  * Auto Scroll View Pager
+ * <ul>
+ * <strong>Basic Setting and Usage</strong>
+ * <li>{@link #startAutoScroll()} start auto scroll, or {@link #startAutoScroll(int)} start auto scroll delayed</li>
+ * <li>{@link #stopAutoScroll()} stop auto scroll</li>
+ * <li>{@link #setInterval(long)} set auto scroll time in milliseconds, default is {@link #DEFAULT_INTERVAL}</li>
+ * </ul>
+ * <ul>
+ * <strong>Advanced Settings and Usage</strong>
+ * <li>{@link #setDirection(int)} set auto scroll direction</li>
+ * <li>{@link #setCycle(boolean)} set whether automatic cycle when auto scroll reaching the last or first item, default
+ * is true</li>
+ * <li>{@link #setSlideBorderMode(int)} set how to process when sliding at the last or first item</li>
+ * <li>{@link #setStopScrollWhenTouch(boolean)} set whether stop auto scroll when touching, default is true</li>
+ * </ul>
  * 
  * @author <a href="http://www.trinea.cn" target="_blank">Trinea</a> 2013-12-30
  */
@@ -28,7 +42,7 @@ public class AutoScrollViewPager extends ViewPager {
     public static final int SLIDE_BORDER_MODE_TO_PARENT = 2;
 
     /** auto scroll time in milliseconds, default is {@link #DEFAULT_INTERVAL} **/
-    private long            interVal                    = DEFAULT_INTERVAL;
+    private long            interval                    = DEFAULT_INTERVAL;
     /** auto scroll direction, default is {@link #RIGHT} **/
     private int             direction                   = RIGHT;
     /** whether automatic cycle when auto scroll reaching the last or first item, default is true **/
@@ -60,11 +74,11 @@ public class AutoScrollViewPager extends ViewPager {
     }
 
     /**
-     * start auto scroll, first scroll delay time is {@link #getInterVal()}
+     * start auto scroll, first scroll delay time is {@link #getInterval()}
      */
     public void startAutoScroll() {
         isAutoScroll = true;
-        sendScrollMessage(interVal);
+        sendScrollMessage(interval);
     }
 
     /**
@@ -174,7 +188,7 @@ public class AutoScrollViewPager extends ViewPager {
             switch (msg.what) {
                 case SCROLL_WHAT:
                     scrollOnce();
-                    sendScrollMessage(interVal);
+                    sendScrollMessage(interval);
                 default:
                     break;
             }
@@ -184,19 +198,19 @@ public class AutoScrollViewPager extends ViewPager {
     /**
      * get auto scroll time in milliseconds, default is {@link #DEFAULT_INTERVAL}
      * 
-     * @return the interVal
+     * @return the interval
      */
-    public long getInterVal() {
-        return interVal;
+    public long getInterval() {
+        return interval;
     }
 
     /**
      * set auto scroll time in milliseconds, default is {@link #DEFAULT_INTERVAL}
      * 
-     * @param interVal the interVal to set
+     * @param interval the interval to set
      */
-    public void setInterVal(long interVal) {
-        this.interVal = interVal;
+    public void setInterval(long interval) {
+        this.interval = interval;
     }
 
     /**
