@@ -1,13 +1,18 @@
 Android Auto Scroll ViewPager
 ==============================
 
-auto scroll ViewPager or ViewPager in ViewPager
+- ViewPager which can auto scroll, cycle.
+- ViewPager which can be slided normal in parent ViewPager.
 
-## Demo apk
+## Sample Application
 <a href="https://play.google.com/store/apps/details?id=cn.trinea.android.demo" target="_blank" title="Download From Google Play"><img src="http://www.android.com/images/brand/get_it_on_play_logo_small.png" title="Download From Google Play"/></a>  
 
+## Features
+- ViewPager which can auto scroll, cycle.
+- ViewPager which can be slided normal in parent ViewPager.
+
 ## Usage
-include this library, use
+- include this library, use
 
 ``` xml
 <cn.trinea.android.view.autoscrollviewpager.AutoScrollViewPager
@@ -22,16 +27,17 @@ replace
 	android:layout_width="match_parent"
 	android:layout_height="wrap_content" />
 ```
-startAutoScroll() start auto scroll  
-startAutoScroll(int)} start auto scroll delayed  
-stopAutoScroll()} stop auto scroll  
+- `startAutoScroll()` start auto scroll, delay time is `getInterval()`.
+- `startAutoScroll(int)` start auto scroll delayed.
+- `stopAutoScroll()` stop auto scroll.
 
-### Setting
-setInterval(long) set auto scroll time in milliseconds, default is 1500ms  
-setDirection(int)} set auto scroll direction, default is Right  
- setCycle(boolean) set whether automatic cycle when auto scroll reaching the last or first item, default is true  
- setSlideBorderMode(int) set how to process when sliding at the last or first item  
- setStopScrollWhenTouch(boolean) set whether stop auto scroll when touching, default is true  
+## Setting
+- `setInterval(long)` set auto scroll time in milliseconds, default is `DEFAULT_INTERVAL`.  
+- `setDirection(int)`  set auto scroll direction, default is `RIGHT`.  
+- `setCycle(boolean)` set whether automatic cycle when auto scroll reaching the last or first item, default is true. 
+- `setSlideBorderMode(int)` set how to process when sliding at the last or first item, default is `SLIDE_BORDER_MODE_NONE`.
+- `setStopScrollWhenTouch(boolean)` set whether stop auto scroll when touching, default is true.
+
 ## License
 
     Copyright 2014 trinea.cn
