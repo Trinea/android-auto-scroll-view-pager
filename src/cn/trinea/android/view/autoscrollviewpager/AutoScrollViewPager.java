@@ -96,7 +96,6 @@ public class AutoScrollViewPager extends ViewPager {
      */
     public void stopAutoScroll() {
         isAutoScroll = false;
-        isStopByTouch = false;
         handler.removeMessages(SCROLL_WHAT);
     }
 
