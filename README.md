@@ -42,6 +42,12 @@ replace
 -dontwarn cn.trinea.android.**
 ```
 
+## Contact Me
+- [trinea_cn@twitter](https://twitter.com/trinea_cn)
+- [trinea@weibo](https://weibo.com/trinea)
+- [trinea.cn](http://www.trinea.cn/)
+- [trinea.cn@gmail.com](mailto:trinea.cn@gmail.com)
+
 ## License
 
     Copyright 2014 trinea.cn
