@@ -7,6 +7,7 @@ Android Auto Scroll ViewPager
 ## Sample Application
 <a href="https://play.google.com/store/apps/details?id=cn.trinea.android.demo" target="_blank" title="Download From Google Play"><img src="http://www.android.com/images/brand/get_it_on_play_logo_small.png" title="Download From Google Play"/></a>  
 
+Demo File: [AutoScrollViewPagerSingleDemo.java](https://github.com/Trinea/android-demo/blob/master/src/cn/trinea/android/demo/AutoScrollViewPagerSingleDemo.java)
 ## Usage
 - include this library, use
 
