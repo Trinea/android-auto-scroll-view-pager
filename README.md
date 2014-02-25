@@ -46,7 +46,7 @@ replace
 - [trinea_cn@twitter](https://twitter.com/trinea_cn)
 - [trinea@weibo](http://weibo.com/trinea)
 - [trinea.cn](http://www.trinea.cn/)
-- [trinea.cn@gmail.com](mailto:trinea.cn@gmail.com)
+- [trinea.cn#gmail.com](mailto:trinea.cn@gmail.com)
 
 ## License
 
