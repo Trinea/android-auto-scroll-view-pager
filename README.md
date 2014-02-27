@@ -35,7 +35,9 @@ replace
 - `setDirection(int)`  set auto scroll direction, default is `RIGHT`.  
 - `setCycle(boolean)` set whether automatic cycle when auto scroll reaching the last or first item, default is true. 
 - `setSlideBorderMode(int)` set how to process when sliding at the last or first item, default is `SLIDE_BORDER_MODE_NONE`.
-- `setStopScrollWhenTouch(boolean)` set whether stop auto scroll when touching, default is true.
+- `setStopScrollWhenTouch(boolean)` set whether stop auto scroll when touching, default is true.  
+
+**More:** http://www.trinea.cn/android/auto-scroll-view-pager/
 
 ## Proguard
 ``` xml
