@@ -54,6 +54,8 @@ public class AutoScrollViewPager extends ViewPager {
     private boolean                stopScrollWhenTouch         = true;
     /** how to process when sliding at the last or first item, default is {@link #SLIDE_BORDER_MODE_NONE} **/
     private int                    slideBorderMode             = SLIDE_BORDER_MODE_NONE;
+    /** whether animating when auto scroll at the last or first item **/
+    private boolean                isBorderAnimation           = true;
 
     private Handler                handler;
     private boolean                isAutoScroll                = false;
@@ -148,11 +150,11 @@ public class AutoScrollViewPager extends ViewPager {
         int nextItem = (direction == LEFT) ? --currentItem : ++currentItem;
         if (nextItem < 0) {
             if (isCycle) {
-                setCurrentItem(totalCount - 1, true);
+                setCurrentItem(totalCount - 1, isBorderAnimation);
             }
         } else if (nextItem == totalCount) {
             if (isCycle) {
-                setCurrentItem(0, true);
+                setCurrentItem(0, isBorderAnimation);
             }
         } else {
             setCurrentItem(nextItem, true);
@@ -196,7 +198,7 @@ public class AutoScrollViewPager extends ViewPager {
                     getParent().requestDisallowInterceptTouchEvent(false);
                 } else {
                     if (pageCount > 1) {
-                        setCurrentItem(pageCount - currentItem - 1, true);
+                        setCurrentItem(pageCount - currentItem - 1, isBorderAnimation);
                     }
                     getParent().requestDisallowInterceptTouchEvent(true);
                 }
@@ -313,5 +315,23 @@ public class AutoScrollViewPager extends ViewPager {
      */
     public void setSlideBorderMode(int slideBorderMode) {
         this.slideBorderMode = slideBorderMode;
+    }
+
+    /**
+     * whether animating when auto scroll at the last or first item, default is true
+     * 
+     * @return
+     */
+    public boolean isBorderAnimation() {
+        return isBorderAnimation;
+    }
+
+    /**
+     * set whether animating when auto scroll at the last or first item, default is true
+     * 
+     * @param isBorderAnimation
+     */
+    public void setBorderAnimation(boolean isBorderAnimation) {
+        this.isBorderAnimation = isBorderAnimation;
     }
 }
