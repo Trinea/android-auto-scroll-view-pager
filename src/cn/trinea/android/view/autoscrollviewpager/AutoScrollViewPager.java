@@ -105,7 +105,7 @@ public class AutoScrollViewPager extends ViewPager {
     }
 
     /**
-     * set the factor by which the duration will change when sliding programmatically
+     * set the factor by which the duration of sliding animation will change
      */
     public void setScrollDurationFactor(double scrollFactor) {
         scroller.setScrollDurationFactor(scrollFactor);
@@ -118,7 +118,7 @@ public class AutoScrollViewPager extends ViewPager {
     }
 
     /**
-     * set ViewPager scroller to change animation duration when sliding programmatically
+     * set ViewPager scroller to change animation duration when sliding
      */
     private void setViewPagerScroller() {
         try {
