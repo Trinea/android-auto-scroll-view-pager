@@ -32,10 +32,12 @@ replace
 
 ## Setting
 - `setInterval(long)` set auto scroll time in milliseconds, default is `DEFAULT_INTERVAL`.  
-- `setDirection(int)`  set auto scroll direction, default is `RIGHT`.  
+- `setDirection(int)` set auto scroll direction, default is `RIGHT`.  
 - `setCycle(boolean)` set whether automatic cycle when auto scroll reaching the last or first item, default is true. 
+- `setScrollDurationFactor(double)` set the factor by which the duration of sliding animation will change.  
 - `setSlideBorderMode(int)` set how to process when sliding at the last or first item, default is `SLIDE_BORDER_MODE_NONE`.
 - `setStopScrollWhenTouch(boolean)` set whether stop auto scroll when touching, default is true.  
+- `setBorderAnimation(boolean)` set whether animating when auto scroll at the last or first item, default is true.  
 
 **More:** http://www.trinea.cn/android/auto-scroll-view-pager/
 
