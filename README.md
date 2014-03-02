@@ -1,13 +1,15 @@
 Android Auto Scroll ViewPager
 ==============================
-
 - ViewPager which can auto scroll, cycle.
 - ViewPager which can be slided normal in parent ViewPager.
+
+![android-auto-scroll-view-pager](http://farm3.staticflickr.com/2843/12805132475_e595664a81_o.gif)
 
 ## Sample Application
 <a href="https://play.google.com/store/apps/details?id=cn.trinea.android.demo" target="_blank" title="Download From Google Play"><img src="http://www.android.com/images/brand/get_it_on_play_logo_small.png" title="Download From Google Play"/></a>  
 
 Demo File: [AutoScrollViewPagerSingleDemo.java](https://github.com/Trinea/android-demo/blob/master/src/cn/trinea/android/demo/AutoScrollViewPagerSingleDemo.java)
+
 ## Usage
 - include this library, use
 
@@ -33,7 +35,9 @@ replace
 - `setDirection(int)`  set auto scroll direction, default is `RIGHT`.  
 - `setCycle(boolean)` set whether automatic cycle when auto scroll reaching the last or first item, default is true. 
 - `setSlideBorderMode(int)` set how to process when sliding at the last or first item, default is `SLIDE_BORDER_MODE_NONE`.
-- `setStopScrollWhenTouch(boolean)` set whether stop auto scroll when touching, default is true.
+- `setStopScrollWhenTouch(boolean)` set whether stop auto scroll when touching, default is true.  
+
+**More:** http://www.trinea.cn/android/auto-scroll-view-pager/
 
 ## Proguard
 ``` xml
@@ -41,6 +45,12 @@ replace
 -keepclassmembers class cn.trinea.android.** { *; }
 -dontwarn cn.trinea.android.**
 ```
+
+## Contact Me
+- [trinea_cn@twitter](https://twitter.com/trinea_cn)
+- [trinea@weibo](http://weibo.com/trinea)
+- [trinea.cn](http://www.trinea.cn/)
+- [trinea.cn#gmail.com](mailto:trinea.cn@gmail.com)
 
 ## License
 
