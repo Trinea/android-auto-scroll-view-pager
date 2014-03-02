@@ -1,5 +1,7 @@
 package cn.trinea.android.view.autoscrollviewpager;
 
+import java.lang.reflect.Field;
+
 import android.content.Context;
 import android.os.Handler;
 import android.os.Message;
@@ -7,6 +9,7 @@ import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
+import android.view.animation.Interpolator;
 
 /**
  * Auto Scroll View Pager
@@ -29,35 +32,36 @@ import android.view.MotionEvent;
  */
 public class AutoScrollViewPager extends ViewPager {
 
-    public static final int DEFAULT_INTERVAL            = 1500;
+    public static final int        DEFAULT_INTERVAL            = 1500;
 
-    public static final int LEFT                        = 0;
-    public static final int RIGHT                       = 1;
+    public static final int        LEFT                        = 0;
+    public static final int        RIGHT                       = 1;
 
     /** do nothing when sliding at the last or first item **/
-    public static final int SLIDE_BORDER_MODE_NONE      = 0;
+    public static final int        SLIDE_BORDER_MODE_NONE      = 0;
     /** cycle when sliding at the last or first item **/
-    public static final int SLIDE_BORDER_MODE_CYCLE     = 1;
+    public static final int        SLIDE_BORDER_MODE_CYCLE     = 1;
     /** deliver event to parent when sliding at the last or first item **/
-    public static final int SLIDE_BORDER_MODE_TO_PARENT = 2;
+    public static final int        SLIDE_BORDER_MODE_TO_PARENT = 2;
 
     /** auto scroll time in milliseconds, default is {@link #DEFAULT_INTERVAL} **/
-    private long            interval                    = DEFAULT_INTERVAL;
+    private long                   interval                    = DEFAULT_INTERVAL;
     /** auto scroll direction, default is {@link #RIGHT} **/
-    private int             direction                   = RIGHT;
+    private int                    direction                   = RIGHT;
     /** whether automatic cycle when auto scroll reaching the last or first item, default is true **/
-    private boolean         isCycle                     = true;
+    private boolean                isCycle                     = true;
     /** whether stop auto scroll when touching, default is true **/
-    private boolean         stopScrollWhenTouch         = true;
+    private boolean                stopScrollWhenTouch         = true;
     /** how to process when sliding at the last or first item, default is {@link #SLIDE_BORDER_MODE_NONE} **/
-    private int             slideBorderMode             = SLIDE_BORDER_MODE_NONE;
+    private int                    slideBorderMode             = SLIDE_BORDER_MODE_NONE;
 
-    private Handler         handler;
-    private boolean         isAutoScroll                = false;
-    private boolean         isStopByTouch               = false;
-    private float           touchX                      = 0f, downX = 0f;
+    private Handler                handler;
+    private boolean                isAutoScroll                = false;
+    private boolean                isStopByTouch               = false;
+    private float                  touchX                      = 0f, downX = 0f;
+    private CustomDurationScroller scroller                    = null;
 
-    public static final int SCROLL_WHAT                 = 0;
+    public static final int        SCROLL_WHAT                 = 0;
 
     public AutoScrollViewPager(Context paramContext){
         super(paramContext);
@@ -71,6 +75,7 @@ public class AutoScrollViewPager extends ViewPager {
 
     private void init() {
         handler = new MyHandler();
+        setViewPagerScroller();
     }
 
     /**
@@ -99,10 +104,34 @@ public class AutoScrollViewPager extends ViewPager {
         handler.removeMessages(SCROLL_WHAT);
     }
 
+    /**
+     * set the factor by which the duration will change when sliding programmatically
+     */
+    public void setScrollDurationFactor(double scrollFactor) {
+        scroller.setScrollDurationFactor(scrollFactor);
+    }
+
     private void sendScrollMessage(long delayTimeInMills) {
         /** remove messages before, keeps one message is running at most **/
         handler.removeMessages(SCROLL_WHAT);
         handler.sendEmptyMessageDelayed(SCROLL_WHAT, delayTimeInMills);
+    }
+
+    /**
+     * set ViewPager scroller to change animation duration when sliding programmatically
+     */
+    private void setViewPagerScroller() {
+        try {
+            Field scrollerField = ViewPager.class.getDeclaredField("mScroller");
+            scrollerField.setAccessible(true);
+            Field interpolatorField = ViewPager.class.getDeclaredField("sInterpolator");
+            interpolatorField.setAccessible(true);
+
+            scroller = new CustomDurationScroller(getContext(), (Interpolator)interpolatorField.get(null));
+            scrollerField.set(this, scroller);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     /**
