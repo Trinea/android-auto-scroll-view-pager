@@ -18,3 +18,14 @@
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
 #   public *;
 #}
+-libraryjars   libs/android-support-v4.jar
+
+-dontwarn android.support.**
+-keep class android.support.v4.** { *; }  
+-keep interface android.support.v4.app.** { *; }
+-keepattributes *Annotation*
+
+# Keep cn.trinea
+-keep class cn.trinea.android.** { *; }
+-keepclassmembers class cn.trinea.android.** { *; }
+-dontwarn cn.trinea.android.**
