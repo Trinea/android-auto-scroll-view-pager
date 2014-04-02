@@ -1,57 +1,75 @@
-整理一下这个项目添加新内容的规范，维持一个统一的格式，方便其他朋友添加以及后续做其他事。  
+Android Auto Scroll ViewPager
+==============================
+- ViewPager which can auto scroll, cycle.
+- ViewPager which can be slided normal in parent ViewPager.
 
-###1、分类标识  
-大分类用`##`表示，如目前的个性化控件大分类  
-小分类用`####`表示，如个性化控件中的ListView小分类  
-所有项目都用`1.`开头，因为markdown会自动递增做为序号  
+![android-auto-scroll-view-pager](http://farm3.staticflickr.com/2843/12805132475_e595664a81_o.gif)
 
-###2、项目内容写法  
-第一行是`1.`加上项目的项目名  
-第二行是项目的功能介绍  
-第三行是`项目地址：`+ url  
-以上三行是必须的。后面可选行如下：  
+## Sample Application
+<a href="https://play.google.com/store/apps/details?id=cn.trinea.android.demo" target="_blank" title="Download From Google Play"><img src="http://www.android.com/images/brand/get_it_on_play_logo_small.png" title="Download From Google Play"/></a>  
 
-示例APK地址：`示例APK地址：`+url  
-示例项目地址：`示例项目地址：`+url  
-效果图：`效果图：`+`![Renderings](url)`   
-文档或API介绍地址：`文档介绍`+url  
-官网地址：`官网网址：`+url  
-APP示例：`APP示例：`+文字  
-表示哪些App用到这个项目或是有类似效果  
- 
-在线演示地址：`在线演示：`+url  
+Demo File: [AutoScrollViewPagerSingleDemo.java](https://github.com/Trinea/android-demo/blob/master/src/cn/trinea/android/demo/AutoScrollViewPagerSingleDemo.java)
 
-项目内容写法示例：  
-``` markdown
-1. Android Auto Scroll ViewPager  
-Android自动滚动轮播循环的ViewPager  
-项目地址：https://github.com/Trinea/android-auto-scroll-view-pager  
-示例APK地址：https://play.google.com/store/apps/details?id=cn.trinea.android.demo  
-示例工程地址：https://github.com/Trinea/android-demo  
-文档介绍：http://www.trinea.cn/android/auto-scroll-view-pager/  
-效果图：![Renderings](http://farm3.staticflickr.com/2843/12805132475_e595664a81_o.gif) 
-``` 
+## Usage
+- include this library, use
 
-###3、个人及组织信息写法  
-第一行是`1.`加上个人或组织名  
-第二行是个人简单信息介绍  
-第三行是`Github地址：`+ url  
-以上三行是必须的。后面可选行如下：  
+``` xml
+<cn.trinea.android.view.autoscrollviewpager.AutoScrollViewPager
+	android:id="@+id/view_pager"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content" />
+```
+replace
+``` xml
+<android.support.v4.view.ViewPager
+	android:id="@+id/view_pager"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content" />
+```
+- `startAutoScroll()` start auto scroll, delay time is `getInterval()`.
+- `startAutoScroll(int)` start auto scroll delayed.
+- `stopAutoScroll()` stop auto scroll.
 
- 
-`代表作：`+文字  
-个人的代表项目  
-`博客：`+url  
-个人博客地址  
-`其他：+`文字  
-其他介绍  
+## Setting
+- `setInterval(long)` set auto scroll time in milliseconds, default is `DEFAULT_INTERVAL`.  
+- `setDirection(int)` set auto scroll direction, default is `RIGHT`.  
+- `setCycle(boolean)` set whether automatic cycle when auto scroll reaching the last or first item, default is true. 
+- `setScrollDurationFactor(double)` set the factor by which the duration of sliding animation will change.  
+- `setSlideBorderMode(int)` set how to process when sliding at the last or first item, default is `SLIDE_BORDER_MODE_NONE`.
+- `setStopScrollWhenTouch(boolean)` set whether stop auto scroll when touching, default is true.  
+- `setBorderAnimation(boolean)` set whether animating when auto scroll at the last or first item, default is true.  
 
+**More:** http://www.trinea.cn/android/auto-scroll-view-pager/
 
-以下是标准示例  
-``` markdown
-1. JakeWharton  vxcz就职于Square  
-Github地址：https://github.com/JakeWharton  
-代表作：ActionBarSherlock，Android-ViewPagerIndicator，Nine Old Androids，SwipeToDismissNOA，hugo，butterknife，Android-DirectionalViewPager, scalpel    
-pidcat另外对square及其他开源项目有很多贡献  
-博客：http://jakewharton.com/  
-``` 
+## Proguard
+``` xml
+-keep class cn.trinea.android.** { *; }
+-keepclassmembers class cn.trinea.android.** { *; }
+-dontwarn cn.trinea.android.**
+```
+
+## Contact Me
+- [trinea_cn@twitter](https://twitter.com/trinea_cn)
+- [trinea@weibo](http://weibo.com/trinea)
+- [trinea.cn](http://www.trinea.cn/)
+- [trinea.cn#gmail.com](mailto:trinea.cn@gmail.com)
+
+## License
+
+    Copyright 2014 trinea.cn
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/Trinea/android-auto-scroll-view-pager/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
+[![githalytics.com alpha](https://cruel-carlota.pagodabox.com/980e58e9fe20890c1f61564a29311cdf "githalytics.com")](http://githalytics.com/Trinea/android-auto-scroll-view-pager)
