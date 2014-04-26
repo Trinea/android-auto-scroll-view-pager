@@ -10,7 +10,7 @@ Android Auto Scroll ViewPager
     <a href="http://trinea.github.com/apk/trinea-android-demo.apk" target="_blank" title="Scan to download"><img src="https://farm3.staticflickr.com/2930/14017948972_bafb6df1b5_o.png" title="Scan to download"/></a>
     <a href="http://trinea.github.com/apk/trinea-android-demo.apk" target="_blank" title="Click to download">Download</a>  
 
-Demo File: [AutoScrollViewPagerSingleDemo.java](https://github.com/Trinea/android-demo/blob/master/src/cn/trinea/android/demo/AutoScrollViewPagerSingleDemo.java)
+Demo File: [AutoScrollViewPagerSingleDemo.java](https://github.com/Trinea/android-demo/blob/master/src/cn/trinea/android/demo/AutoScrollViewPagerDemo.java)  
 
 ## Usage
 - include this library, use
@@ -40,7 +40,14 @@ replace
 - `setSlideBorderMode(int)` set how to process when sliding at the last or first item, default is `SLIDE_BORDER_MODE_NONE`.
 - `setStopScrollWhenTouch(boolean)` set whether stop auto scroll when touching, default is true.  
 - `setBorderAnimation(boolean)` set whether animating when auto scroll at the last or first item, default is true.  
-
+- You may need [ViewPagerIndicator](https://github.com/JakeWharton/Android-ViewPagerIndicator) to implement indicator. 
+- If you want infinite loop, please return like this in your adapter.
+``` xml
+@Override
+public int getCount() {
+	return Integer.MAX_VALUE;
+}
+```
 **More:** http://www.trinea.cn/android/auto-scroll-view-pager/
 
 ## Proguard
