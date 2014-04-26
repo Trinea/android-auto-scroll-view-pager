@@ -73,4 +73,3 @@ replace
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/Trinea/android-auto-scroll-view-pager/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
 [![githalytics.com alpha](https://cruel-carlota.pagodabox.com/980e58e9fe20890c1f61564a29311cdf "githalytics.com")](http://githalytics.com/Trinea/android-auto-scroll-view-pager)
-
