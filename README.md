@@ -6,7 +6,8 @@ Android Auto Scroll ViewPager
 ![android-auto-scroll-view-pager](http://farm3.staticflickr.com/2843/12805132475_e595664a81_o.gif)
 
 ## Sample Application
-<a href="https://play.google.com/store/apps/details?id=cn.trinea.android.demo" target="_blank" title="Download From Google Play"><img src="http://www.android.com/images/brand/get_it_on_play_logo_small.png" title="Download From Google Play"/></a>  
+<a href="https://play.google.com/store/apps/details?id=cn.trinea.android.demo" target="_blank" title="Download From Google Play"><img src="http://www.android.com/images/brand/get_it_on_play_logo_small.png" title="Download From Google Play"/></a>
+    <a href="http://trinea.github.com/apk/trinea-android-demo.apk" target="_blank" title="¶þÎ¬ÂëÉ¨ÃèÏÂÔØ"><img src="https://farm6.staticflickr.com/5515/14014260712_e5a3b206ba_o.png" title="¶þÎ¬ÂëÉ¨ÃèÏÂÔØ"/></a>  
 
 Demo File: [AutoScrollViewPagerSingleDemo.java](https://github.com/Trinea/android-demo/blob/master/src/cn/trinea/android/demo/AutoScrollViewPagerSingleDemo.java)
 
