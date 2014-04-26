@@ -13,11 +13,11 @@ public class CustomDurationScroller extends Scroller {
 
     private double scrollFactor = 1;
 
-    public CustomDurationScroller(Context context){
+    public CustomDurationScroller(Context context) {
         super(context);
     }
 
-    public CustomDurationScroller(Context context, Interpolator interpolator){
+    public CustomDurationScroller(Context context, Interpolator interpolator) {
         super(context, interpolator);
     }
 

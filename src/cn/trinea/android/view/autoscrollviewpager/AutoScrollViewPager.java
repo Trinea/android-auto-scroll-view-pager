@@ -65,12 +65,12 @@ public class AutoScrollViewPager extends ViewPager {
 
     public static final int        SCROLL_WHAT                 = 0;
 
-    public AutoScrollViewPager(Context paramContext){
+    public AutoScrollViewPager(Context paramContext) {
         super(paramContext);
         init();
     }
 
-    public AutoScrollViewPager(Context paramContext, AttributeSet paramAttributeSet){
+    public AutoScrollViewPager(Context paramContext, AttributeSet paramAttributeSet) {
         super(paramContext, paramAttributeSet);
         init();
     }
@@ -301,7 +301,7 @@ public class AutoScrollViewPager extends ViewPager {
      * get how to process when sliding at the last or first item
      * 
      * @return the slideBorderMode {@link #SLIDE_BORDER_MODE_NONE}, {@link #SLIDE_BORDER_MODE_TO_PARENT},
-     * {@link #SLIDE_BORDER_MODE_CYCLE}, default is {@link #SLIDE_BORDER_MODE_NONE}
+     *         {@link #SLIDE_BORDER_MODE_CYCLE}, default is {@link #SLIDE_BORDER_MODE_NONE}
      */
     public int getSlideBorderMode() {
         return slideBorderMode;
@@ -311,7 +311,7 @@ public class AutoScrollViewPager extends ViewPager {
      * set how to process when sliding at the last or first item
      * 
      * @param slideBorderMode {@link #SLIDE_BORDER_MODE_NONE}, {@link #SLIDE_BORDER_MODE_TO_PARENT},
-     * {@link #SLIDE_BORDER_MODE_CYCLE}, default is {@link #SLIDE_BORDER_MODE_NONE}
+     *        {@link #SLIDE_BORDER_MODE_CYCLE}, default is {@link #SLIDE_BORDER_MODE_NONE}
      */
     public void setSlideBorderMode(int slideBorderMode) {
         this.slideBorderMode = slideBorderMode;
