@@ -41,7 +41,7 @@ replace
 - `setStopScrollWhenTouch(boolean)` set whether stop auto scroll when touching, default is true.  
 - `setBorderAnimation(boolean)` set whether animating when auto scroll at the last or first item, default is true.  
 - You may need [ViewPagerIndicator](https://github.com/JakeWharton/Android-ViewPagerIndicator) to implement indicator. 
-- If you want infinite loop, please return like this in your adapter.
+- If you want infinite loop, please override getCount of adapter like this and use [ViewPageCache](https://github.com/JakeWharton/salvage).
 ``` xml
 @Override
 public int getCount() {
