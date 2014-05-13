@@ -7,7 +7,7 @@
     <packaging>jar</packaging>
 
     <name>Android Auto Scroll ViewPager</name>
-    <version>1.1.2-SNAPSHOT</version>
+    <version>1.1.2</version>
     <url>https://github.com/Trinea/android-auto-scroll-view-pager</url>
     <description>Android Auto Scroll ViewPager</description>
     <inceptionYear>2014</inceptionYear>
@@ -29,7 +29,7 @@
         <connection>scm:git:git://github.com/Trinea/android-auto-scroll-view-pager.git</connection>
         <developerConnection>scm:git:git@github.com:Trinea/android-auto-scroll-view-pager.git</developerConnection>
         <url>https://github.com/Trinea/android-auto-scroll-view-pager</url>
-      <tag>HEAD</tag>
+      <tag>v1.1.2</tag>
   </scm>
 
     <developers>
