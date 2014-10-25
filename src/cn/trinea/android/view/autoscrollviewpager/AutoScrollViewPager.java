@@ -56,6 +56,11 @@ public class AutoScrollViewPager extends ViewPager {
     private int                    slideBorderMode             = SLIDE_BORDER_MODE_NONE;
     /** whether animating when auto scroll at the last or first item **/
     private boolean                isBorderAnimation           = true;
+    /** scroll factor for auto scroll animation, default is 1.0 **/
+    private double                 autoScrollFactor            = 1.0;
+    /** scroll factor for swipe scroll animation, default is 1.0 **/
+    private double                 swipeScrollFactor            = 1.0;
+
 
     private Handler                handler;
     private boolean                isAutoScroll                = false;
@@ -107,10 +112,18 @@ public class AutoScrollViewPager extends ViewPager {
     }
 
     /**
-     * set the factor by which the duration of sliding animation will change
+     * set the factor by which the duration of sliding animation will change when swiping
      */
-    public void setScrollDurationFactor(double scrollFactor) {
+    public void setSwipeScrollDurationFactor(double scrollFactor) {
+        swipeScrollFactor = scrollFactor;
         scroller.setScrollDurationFactor(scrollFactor);
+    }
+
+    /**
+     * set the factor by which the duration of sliding animation will change when autoscrolling
+     */
+    public void setAutoScrollDurationFactor(double scrollFactor) {
+        autoScrollFactor = scrollFactor;
     }
 
     private void sendScrollMessage(long delayTimeInMills) {
@@ -217,7 +230,9 @@ public class AutoScrollViewPager extends ViewPager {
 
             switch (msg.what) {
                 case SCROLL_WHAT:
+                    scroller.setScrollDurationFactor(autoScrollFactor);
                     scrollOnce();
+                    scroller.setScrollDurationFactor(swipeScrollFactor);
                     sendScrollMessage(interval);
                 default:
                     break;
