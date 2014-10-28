@@ -5,6 +5,7 @@ import java.lang.reflect.Field;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Message;
+import android.support.v4.view.MotionEventCompat;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
@@ -59,8 +60,7 @@ public class AutoScrollViewPager extends ViewPager {
     /** scroll factor for auto scroll animation, default is 1.0 **/
     private double                 autoScrollFactor            = 1.0;
     /** scroll factor for swipe scroll animation, default is 1.0 **/
-    private double                 swipeScrollFactor            = 1.0;
-
+    private double                 swipeScrollFactor           = 1.0;
 
     private Handler                handler;
     private boolean                isAutoScroll                = false;
@@ -112,15 +112,14 @@ public class AutoScrollViewPager extends ViewPager {
     }
 
     /**
-     * set the factor by which the duration of sliding animation will change when swiping
+     * set the factor by which the duration of sliding animation will change while swiping
      */
     public void setSwipeScrollDurationFactor(double scrollFactor) {
         swipeScrollFactor = scrollFactor;
-        scroller.setScrollDurationFactor(scrollFactor);
     }
 
     /**
-     * set the factor by which the duration of sliding animation will change when autoscrolling
+     * set the factor by which the duration of sliding animation will change while auto scrolling
      */
     public void setAutoScrollDurationFactor(double scrollFactor) {
         autoScrollFactor = scrollFactor;
@@ -181,12 +180,12 @@ public class AutoScrollViewPager extends ViewPager {
      * <li>if event is up, start auto scroll again.</li>
      * </ul>
      */
-   @Override
+    @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
         int action = MotionEventCompat.getActionMasked(ev);
 
         if (stopScrollWhenTouch) {
-            if ((action == MotionEvent.ACTION_DOWN ) && isAutoScroll) {
+            if ((action == MotionEvent.ACTION_DOWN) && isAutoScroll) {
                 isStopByTouch = true;
                 stopAutoScroll();
             } else if (ev.getAction() == MotionEvent.ACTION_UP && isStopByTouch) {
