@@ -53,14 +53,19 @@ replace
 ```
 
 ## Download
-Maven:
+Maven:  
 ``` xml
 <dependency>
     <groupId>cn.trinea.android.view.autoscrollviewpager</groupId>
     <artifactId>android-auto-scroll-view-pager</artifactId>
     <version>1.1.2</version>
 </dependency>
-```
+```  
+
+Gradle:  
+``` xml
+compile 'cn.trinea.android.view.autoscrollviewpager:android-auto-scroll-view-pager:1.1.2'
+```  
 
 ## Contact Me
 - [trinea@google plus](https://plus.google.com/u/0/111989205221366883984)
