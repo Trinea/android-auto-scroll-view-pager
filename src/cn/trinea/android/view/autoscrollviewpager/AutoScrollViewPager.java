@@ -90,7 +90,7 @@ public class AutoScrollViewPager extends ViewPager {
      */
     public void startAutoScroll() {
         isAutoScroll = true;
-        sendScrollMessage(interval);
+        sendScrollMessage((long) (interval + scroller.getDuration()/ autoScrollFactor * swipeScrollFactor));
     }
 
     /**
@@ -235,7 +235,7 @@ public class AutoScrollViewPager extends ViewPager {
                     scroller.setScrollDurationFactor(autoScrollFactor);
                     scrollOnce();
                     scroller.setScrollDurationFactor(swipeScrollFactor);
-                    sendScrollMessage(interval);
+                    sendScrollMessage(interval + scroller.getDuration());
                 default:
                     break;
             }
