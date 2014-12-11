@@ -41,7 +41,7 @@ replace
 - `setSlideBorderMode(int)` set how to process when sliding at the last or first item, default is `SLIDE_BORDER_MODE_NONE`.
 - `setStopScrollWhenTouch(boolean)` set whether stop auto scroll when touching, default is true.  
 - `setBorderAnimation(boolean)` set whether animating when auto scroll at the last or first item, default is true.  
-- You may need [ViewPagerIndicator](https://github.com/JakeWharton/Android-ViewPagerIndicator) to implement indicator. 
+- You cannot combine with [ViewPagerIndicator](https://github.com/JakeWharton/Android-ViewPagerIndicator) if `setCycle(true)`. 
 - If you want infinite loop, please see [AutoScrollViewPagerSingleDemo.java](https://github.com/Trinea/android-demo/blob/master/src/cn/trinea/android/demo/AutoScrollViewPagerDemo.java)  
 **More:** http://www.trinea.cn/android/auto-scroll-view-pager/
 
