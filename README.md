@@ -1,8 +1,9 @@
 Android Auto Scroll ViewPager
 ==============================
-- ViewPager which can auto scrolling, cycling, decelerating.
-- ViewPager which can be slided normal in parent ViewPager.
-- 中文介绍见: [Android自动滚动 轮播循环的ViewPager](http://www.trinea.cn/android/auto-scroll-view-pager/)
+ViewPager which can auto scrolling, cycling, decelerating.  
+ViewPager which can be slided normal in parent ViewPager.  
+
+中文介绍见: [Android自动滚动 轮播循环的ViewPager](http://www.trinea.cn/android/auto-scroll-view-pager/)
 ![android-auto-scroll-view-pager](http://farm3.staticflickr.com/2843/12805132475_e595664a81_o.gif)
 
 ## Sample Application
