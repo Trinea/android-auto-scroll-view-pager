@@ -65,7 +65,9 @@ Maven:
 
 Gradle:  
 ``` xml
-compile 'cn.trinea.android.view.autoscrollviewpager:android-auto-scroll-view-pager:1.1.2'
+compile ('cn.trinea.android.view.autoscrollviewpager:android-auto-scroll-view-pager:1.1.2') {
+    exclude module: 'support-v4'
+}
 ```  
 
 ## Contact Me
