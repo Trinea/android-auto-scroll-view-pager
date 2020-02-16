@@ -1,7 +1,14 @@
 Android Auto Scroll ViewPager
 ==============================
 ViewPager which can auto scrolling, cycling, decelerating.  
-ViewPager which can be slided normal in parent ViewPager.  
+ViewPager which can be slided normal in parent ViewPager. 
+
+### Dev Tools App
+The Dev Tools App is a powerful android development tool that can help you improve efficiency greatly, It can be used to view the latest open source projects, view activity history, view manifest, decompile, color picker, extract apk or so, view app info, open or close the options in the developer options quickly, and more.  
+  
+You can download it from **[DevTools@Google Play](https://play.google.com/store/apps/details?id=cn.trinea.android.developertools)**.  
+![](https://lh3.googleusercontent.com/ERb20Y50r3u_tZMMlqpH5cnS_MC_n366WoKvEjJyFfHz6d-EwvhaEUf7ZKAgRajboTWR=w720-h440-rw)  
+
 
 中文介绍见: [Android自动滚动 轮播循环的ViewPager](http://www.trinea.cn/android/auto-scroll-view-pager/)
 ![android-auto-scroll-view-pager](http://farm3.staticflickr.com/2843/12805132475_e595664a81_o.gif)
@@ -70,8 +77,8 @@ compile ('cn.trinea.android.view.autoscrollviewpager:android-auto-scroll-view-pa
 }
 ```  
 
-## Contact Me
-- [trinea@google plus](https://plus.google.com/u/0/111989205221366883984)
+## About Me
+Author of [Android Dev Tools App](https://play.google.com/store/apps/details?id=cn.trinea.android.developertools)  
 - [trinea@twitter](https://twitter.com/trinea_cn)
 - [trinea@weibo](http://weibo.com/trinea)
 - [trinea.cn](http://www.trinea.cn/)
