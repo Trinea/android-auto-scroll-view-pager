@@ -3,6 +3,8 @@ Android Auto Scroll ViewPager
 ViewPager which can auto scrolling, cycling, decelerating.  
 ViewPager which can be slided normal in parent ViewPager. 
 
+**Attention: This library is too old and only supports android-support lib, It's deprecated now. The latest Kotlin and AndroidX support version can use https://github.com/pzienowicz/androidx-auto-scroll-view-pager, Thanks to pzienowicz for giving it a new life.**
+
 ### Dev Tools App
 The Dev Tools App is a powerful android development tool that can help you improve efficiency greatly, It can be used to view the latest open source projects, view activity history, view manifest, decompile, color picker, extract apk or so, view app info, open or close the options in the developer options quickly, and more.  
   
